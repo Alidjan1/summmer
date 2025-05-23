@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лагерь "Солнечный берег"</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1><i class="fas fa-campground"></i> Лагерь "Солнечный берег"</h1>
+                <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </header>
+        <section class="camp-hero">
+            <div class="hero-image">
+                <img src="8f2f5238-ef9a-4745-9664-7eb207cc7659.png" alt="Лагерь Солнечный берег">
+            </div>
+            <div class="hero-description">
+                <h2>Добро пожаловать в лагерь "Солнечный берег"!</h2>
+                <p>Наш лагерь расположен в живописном сосновом бору на берегу чистого озера. Мы предлагаем увлекательные программы для детей 10-16 лет с насыщенными мероприятиями и профессиональными вожатыми.</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-tree"></i>
+                        <span>Экологически чистая территория</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-utensils"></i>
+                        <span>5-разовое питание</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Круглосуточная охрана</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <main class="app-main">
+            <section class="registration-section">
+                <h2><i class="fas fa-user-plus"></i> Регистрация участника</h2>
+                <form id="registration-form" class="camp-form">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Имя:</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age"><i class="fas fa-birthday-cake"></i> Возраст:</label>
+                        <input type="number" id="age" min="10" max="16" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-venus-mars"></i> Пол:</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="gender" value="male" required>
+                                <i class="fas fa-mars"></i> Мальчик
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="female">
+                                <i class="fas fa-venus"></i> Девочка
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="interests"><i class="fas fa-heart"></i> Интересы:</label>
+                        <select id="interests" multiple>
+                            <option value="sport">Спорт</option>
+                            <option value="art">Творчество</option>
+                            <option value="science">Наука</option>
+                            <option value="music">Музыка</option>
+                            <option value="dance">Танцы</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn"><i class="fas fa-check"></i> Зарегистрировать</button>
+                </form>
+            </section>
+
+            <section class="actions-section">
+                <div class="search-filter">
+                    <input type="text" id="search-input" placeholder="Поиск по имени...">
+                    <select id="filter-team">
+                        <option value="all">Все отряды</option>
+                        <option value="junior">Младший</option>
+                        <option value="middle">Средний</option>
+                        <option value="senior">Старший</option>
+                    </select>
+                    <select id="filter-building">
+                        <option value="all">Все корпуса</option>
+                        <option value="A">Корпус А</option>
+                        <option value="B">Корпус B</option>
+                    </select>
+                    <button id="clear-all" class="danger-btn"><i class="fas fa-trash"></i> Очистить всех</button>
+                </div>
+
+                <div class="event-management">
+                    <h3><i class="fas fa-calendar-alt"></i> Мероприятия</h3>
+                    <div class="event-controls">
+                        <select id="event-select">
+                            <option value="">Выберите мероприятие</option>
+                            <option value="football">Футбол (10-16 лет)</option>
+                            <option value="painting">Рисование (10-14 лет)</option>
+                            <option value="chess">Шахматы (12-16 лет)</option>
+                            <option value="dance">Танцы (10-16 лет)</option>
+                            <option value="quiz">Викторина (13-16 лет)</option>
+                        </select>
+                        <select id="participant-select">
+                            <option value="">Выберите участника</option>
+                        </select>
+                        <button id="assign-event"><i class="fas fa-plus"></i> Назначить</button>
+                    </div>
+                    <button id="add-event-btn" class="secondary-btn"><i class="fas fa-plus-circle"></i> Добавить мероприятие</button>
+                </div>
+            </section>
+
+            <section class="participants-section">
+                <h2><i class="fas fa-users"></i> Участники лагеря</h2>
+                <div class="stats-bar">
+                    <div class="stat-card junior-stat">
+                        <h4>Младший отряд</h4>
+                        <p id="junior-count">0</p>
+                    </div>
+                    <div class="stat-card middle-stat">
+                        <h4>Средний отряд</h4>
+                        <p id="middle-count">0</p>
+                    </div>
+                    <div class="stat-card senior-stat">
+                        <h4>Старший отряд</h4>
+                        <p id="senior-count">0</p>
+                    </div>
+                    <div class="stat-card total-stat">
+                        <h4>Всего</h4>
+                        <p id="total-count">0</p>
+                    </div>
+                </div>
+
+                <div class="teams-container">
+                    <div class="team-card junior-team">
+                        <h3><i class="fas fa-child"></i> Младший отряд (10-12 лет)</h3>
+                        <div class="building-tabs">
+                            <button class="building-tab active" data-building="all">Все</button>
+                            <button class="building-tab" data-building="A">Корпус А</button>
+                            <button class="building-tab" data-building="B">Корпус B</button>
+                        </div>
+                        <div class="participants-list" id="junior-list"></div>
+                    </div>
+
+                    <div class="team-card middle-team">
+                        <h3><i class="fas fa-user"></i> Средний отряд (13-14 лет)</h3>
+                        <div class="building-tabs">
+                            <button class="building-tab active" data-building="all">Все</button>
+                            <button class="building-tab" data-building="A">Корпус А</button>
+                            <button class="building-tab" data-building="B">Корпус B</button>
+                        </div>
+                        <div class="participants-list" id="middle-list"></div>
+                    </div>
+
+                    <div class="team-card senior-team">
+                        <h3><i class="fas fa-user-graduate"></i> Старший отряд (15-16 лет)</h3>
+                        <div class="building-tabs">
+                            <button class="building-tab active" data-building="all">Все</button>
+                            <button class="building-tab" data-building="A">Корпус А</button>
+                            <button class="building-tab" data-building="B">Корпус B</button>
+                        </div>
+                        <div class="participants-list" id="senior-list"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div id="add-event-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3><i class="fas fa-plus-circle"></i> Добавить мероприятие</h3>
+                <form id="new-event-form">
+                    <div class="form-group">
+                        <label for="event-name">Название:</label>
+                        <input type="text" id="event-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-min-age">Минимальный возраст:</label>
+                        <input type="number" id="event-min-age" min="10" max="16" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-max-age">Максимальный возраст:</label>
+                        <input type="number" id="event-max-age" min="10" max="16" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-type">Тип:</label>
+                        <select id="event-type" required>
+                            <option value="sport">Спортивное</option>
+                            <option value="art">Творческое</option>
+                            <option value="intellectual">Интеллектуальное</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn"><i class="fas fa-check"></i> Добавить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="base.js"></script>
+</body>
+</html>
